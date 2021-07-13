@@ -1,0 +1,29 @@
+<!DOCTYPE html>  
+<html>  
+<head lang="en">  
+    <meta charset="UTF-8">  
+    <title></title>  
+</head>  
+<body>  
+    <div id="kk"></div>
+</body>  
+<script type="text/javascript">  
+    //document上绑定自定义事件oneating
+    const kk = document.querySelector('#kk')  
+    kk.addEventListener('oneating', function (event) {  
+        alert(event.mingzi+'，'+event.message);  
+    }, false);  
+  
+    //创建event的对象实例。  
+    var event = document.createEvent('HTMLEvents');  
+    // 3个参数：事件类型，是否冒泡，是否阻止浏览器的默认行为  
+    event.initEvent("oneating", true, true);  
+    /*属性，随便自己定义*/  
+    event.mingzi = 'hello,我是李小贱';  
+    event.message = '我今天241岁';  
+  
+    //触发自定义事件oneating  
+    kk.dispatchEvent(event);  
+    
+</script>  
+</html>
