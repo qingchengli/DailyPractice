@@ -33,7 +33,7 @@ function debounce2(func, wait, immediate) {
     return function() {
         // 改变this指向,因为,div.function调用是,function是指向对象的,但settimeout的func的this是指向window的
         let _this = this
-        // 获取调用时的传参
+        // 获取调用时的传参(注,arguments实际是类数组对象)
         let args = arguments
         clearTimeout(timer)
         if (immediate) {
