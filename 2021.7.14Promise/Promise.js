@@ -138,15 +138,3 @@ class Promise {
     return promise2;
   }
 }
-
-
-new Promise((resolve, reject) => {
-    console.log('开始')
-    setTimeout(() => {
-        resolve('成功')
-    }, 2000);
-}).then(1,2).then(() => {
-    return 'ke'
-}, '').then(res => {
-    console.log(res)
-}).then(res => {})
