@@ -6,3 +6,8 @@ function sleep(n) {
         }
     }
 }
+
+setTimeout(() => {
+    console.log(2)
+}, 2000);
+sleep(2000)
