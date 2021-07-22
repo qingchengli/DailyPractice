@@ -1,11 +1,46 @@
-/* 面试官：你能实现多少种水平垂直居中的布局（定宽高和不定宽高
+/* 面试官：你能实现多少种水平垂直居中的布局（定宽高和不定宽高*/
 
-单列布局
+/* 单列布局*/
 
-两列自适应布局
+/* 两列自适应布局*/
+/* 1.实现思路: 利用BFC不与浮动元素重叠的特性 */
+.left{
+    float: left;
+}
+.right{
+    /* overflow:hidden出发bfc */
+    overflow: hidden;
+}
+/* 思路二 利用flex */
+.parent{
+    /* 父元素为flex */
+    display: flex;
+}
+.left{
+    flex: 1;
+}
 
-三栏布局
+/* 三栏布局*/
+#container{
+    display: flex;
+}
+.left1{
+    width: 300px;
+    height: 300px;
+    background-color:bisque;
+}
+.right1{
+    width: 300px;
+    height: 300px;
+    background-color: darkseagreen;
+}
+.center1{
+    overflow: hidden;
+    flex: 1;
+    height: 300px;
+    background-color: aquamarine;
+}
 
-粘连布局 */
+/* 粘连布局 */
 
 /* 1.垂直居中 */

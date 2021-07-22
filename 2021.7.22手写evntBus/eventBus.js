@@ -15,8 +15,11 @@ class EventBus {
     }
     // 移除订阅者
     $off(eventName, fn) {
+        if (arguments.length === 0) {
+            this.events = {}
+        }
         if (this.events[eventName]) {
-            if (this.events[eventName].length === 1) {
+            if (this.events[eventName].length === 1 || typeof fn !== 'function') {
                 delete this.events[eventName]
             } else {
                 this.events[eventName].splice(this.events[eventName].findIndex(e => e === fn), 1)
@@ -24,10 +27,10 @@ class EventBus {
         }
         // 如果只有事件,则移除这个事件所有的监听器
     }
-    // 清除所有订阅者
-    $clear() {
-        this.events = {}
-    }
+    // 清除所有订阅者,集成到$off里
+    // $clear() {
+    //     this.events = {}
+    // }
     // 只触发一次
     $once(eventName, callback) {
         let _this = this

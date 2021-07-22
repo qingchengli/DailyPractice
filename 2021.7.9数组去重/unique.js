@@ -79,5 +79,20 @@ function unique6(arr6) {
     return arr
 }
 
+// 利用es6 map去重
+function unique7(arr7) {
+    let arr = []
+    let map = new Map()
+    for (let i in arr7) {
+        if (map.has(arr7[i])) {
+            map.set(arr7[i], true)
+        } else {
+            map.set(arr7[i], false)
+            arr.push(arr7[i])
+        }
+    }
+    return arr
+}
+
 let arr = [1,3,4,3,3,5,1,4,6,8,9,98,32,4,null,undefined,null,32]
-console.log(unique6(arr))
+console.log(unique7(arr))
