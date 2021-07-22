@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+      }
+
+      .loop-run {
+        width: 600px;
+        height: 300px;
+        background: #005E82;
+        position: relative;
+        border-radius: 50%;
+      }
+
+      .circle {
+        width: 30px;
+        height: 30px;
+        background: #F0506E;
+        border-radius: 50%;
+        position: absolute;
+      }
+
+
+      .circle1 {
+        animation: animX 6s cubic-bezier(0.36, 0, 0.64, 1) -3s infinite alternate,
+          animY 6s cubic-bezier(0.36, 0, 0.64, 1)  0s infinite alternate;
+          scale 12s cubic-bezier(0.36, 0, 0.64, 1) 0s infinite alternate;
+      }
+
+      .circle2 {
+        animation: animX 6s cubic-bezier(0.36, 0, 0.64, 1) -5.4s infinite alternate,
+          animY 6s cubic-bezier(0.36, 0, 0.64, 1) -2.4s infinite alternate;
+          scale 12s cubic-bezier(0.36, 0, 0.64, 1) -2.4s infinite alternate;
+      }
+
+      .circle3 {
+        animation: animX 6s cubic-bezier(0.36, 0, 0.64, 1) -7.8s infinite alternate,
+          animY 6s cubic-bezier(0.36, 0, 0.64, 1) -4.8s infinite alternate;
+          scale 12s cubic-bezier(0.36, 0, 0.64, 1) -4.8s infinite alternate;
+      }
+
+      .circle4 {
+        animation: animX 6s cubic-bezier(0.36, 0, 0.64, 1) -10.2s infinite alternate,
+          animY 6s cubic-bezier(0.36, 0, 0.64, 1) -7.2s infinite alternate;
+           scale 12s cubic-bezier(0.36, 0, 0.64, 1) -7.2s infinite alternate;
+      }
+
+      .circle5 {
+        animation: animX 6s cubic-bezier(0.36, 0, 0.64, 1) -12.6s infinite alternate,
+          animY 6s cubic-bezier(0.36, 0, 0.64, 1) -9.6s infinite alternate;
+           scale 12s cubic-bezier(0.36, 0, 0.64, 1) -9.6s infinite alternate;
+      }
+
+      @keyframes animX {
+        0% {
+          left: -4%;
+        }
+
+        100% {
+          left: 96%;
+        }
+      }
+
+      @keyframes animY {
+        0% {
+          top: -4%;
+        }
+
+        100% {
+          top: 96%;
+        }
+      }
+     keyframes scale {
+     
+       0% {
+         transform: scale(0.5);
+         opacity: 0.5;
+       }
+     
+       50% {
+         transform: scale(1);
+         opacity: 1;
+       }
+     
+       100% {
+         transform: scale(0.5);
+         opacity: 0.5;
+       }
+     }
+    </style>
+  </head>
+  <body>
+    <div class="loop-run">
+      <div class="circle circle1"></div>
+      <div class="circle circle2"></div>
+      <div class="circle circle3"></div>
+      <div class="circle circle4"></div>
+      <div class="circle circle5"></div>
+    </div>
+  </body>
+</html>
+

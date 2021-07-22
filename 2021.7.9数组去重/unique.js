@@ -52,6 +52,9 @@ function unique4(arr4) {
     return Array.from(new Set(arr4))
 }
 
+// 补充: set亦可以作为字符串去重的手段
+// [...new Set('ababbc')].join('') 向 Set 加入值的时候，不会发生类型转换，所以5和"5"是两个不同的值。
+
 // 方法五: 利用数组.reduce循环方法
 // array.reduce(function(accumulator, currentValue, currentIndex, array), initialValue)
 // initialValue：初始值（可选）
