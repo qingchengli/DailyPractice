@@ -114,5 +114,21 @@ function unique8(arr8) {
     return arr1
 }
 
+// 利用对象键名唯一来去重
+function unique9(arr9) {
+    // 深拷贝clonedeep(arr9)
+    let arr = []
+    let obj = {}
+    for (key in arr9) {
+        if (!obj[arr9[key]]) {
+            arr.push(arr9[key])
+            obj[arr9[key]] = 1
+        } else {
+            obj[arr9[key]]++
+        }
+    }
+    return arr
+}
+
 let arr = [1,3,4,3,3,5,1,4,6,8,9,98,32,4,null,undefined,null,32]
-console.log(unique8(arr))
+console.log(unique9(arr))

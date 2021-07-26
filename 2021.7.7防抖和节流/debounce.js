@@ -23,7 +23,7 @@ function debounce(func, wait) {
         clearTimeout(timer)
         timer = setTimeout(() => {
             // 使用apply而不是使用call的原因就是arguments传入是数组
-            func.apply(_this, arguments)
+            func.apply(_this, args)
         }, wait);
     }
 }
