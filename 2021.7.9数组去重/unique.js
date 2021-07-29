@@ -94,5 +94,41 @@ function unique7(arr7) {
     return arr
 }
 
+// 函数递归去重
+// 利用sort先排序,然后用递归不断对比相邻元素大小
+function unique8(arr8) {
+    // 先排序
+    let len = arr8.length
+    let arr1 = arr8
+    arr1.sort((a, b) => (a-b))
+    function loop(index) {
+        if (index >= 1) {
+            if (arr1[index] === arr1[index - 1]) {
+                arr1.splice(index, 1)
+            }
+            loop(index - 1)
+        }
+    }
+    // 从最后一个开始对比
+    loop(len - 1)
+    return arr1
+}
+
+// 利用对象键名唯一来去重
+function unique9(arr9) {
+    // 深拷贝clonedeep(arr9)
+    let arr = []
+    let obj = {}
+    for (key in arr9) {
+        if (!obj[arr9[key]]) {
+            arr.push(arr9[key])
+            obj[arr9[key]] = 1
+        } else {
+            obj[arr9[key]]++
+        }
+    }
+    return arr
+}
+
 let arr = [1,3,4,3,3,5,1,4,6,8,9,98,32,4,null,undefined,null,32]
-console.log(unique7(arr))
+console.log(unique9(arr))
