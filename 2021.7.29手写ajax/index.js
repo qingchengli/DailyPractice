@@ -66,7 +66,7 @@ function ajax(options = { method: 'GET', data: {}, url: '', timeout: 10000, asyn
         // xhr.readyState==2 已发送请求（已调用 send）
         // xhr.readyState==3 已接收到请求返回的数据
         // xhr.readyState==4 请求已完成
-
+        // 304为资源未变更,可以从本地缓存获取
         xhr.onreadystatechange = () => {
             if (xhr.readyState === 4) {
                 if (xhr.status >= 200 && xhr.status <= 300 || xhr.status === 304) {
